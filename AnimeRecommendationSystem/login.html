@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<h4>CRUNCHYROLL ANIME RECOMMENDATION SYSTEM<br>LOGIN</h4>
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+<body>
+    
+    <form action = "check_user.php" method = "POST">
+        <div class = "login-container">
+            <script>
+                // Check if URL parameter 'error' is set to '1'
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                
+                if (error === '1') {
+                    const errorMessage = document.createElement('div');
+                    errorMessage.style.color = 'red';
+                    errorMessage.textContent = 'Invalid username or password.';
+                    document.querySelector('.login-container').appendChild(errorMessage);
+                }
+            </script> 
+            <div><input type = "text" name = "username" placeholder="Username"></div>
+            <div><input type = "text" name = "password" placeholder="Password"></div>
+            <div><button type = "Login" name = "login">Login</button></div>
+            <p>Don't have an account? <a href='register.php?'>Register here</a></p>
+        </div>
+    </form>
+    
+</body>
+</html>
