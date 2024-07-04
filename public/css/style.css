@@ -23,7 +23,7 @@ body {
     color: var(--color-white);
     font-family: var(--font-family);
     font-size: 18px;
-    background: var(--color-black) url('../ressources/images/background.jpg') no-repeat center top 70px fixed;
+    background: var(--color-black) url('../resources/images/background.jpg') no-repeat center top 70px fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
