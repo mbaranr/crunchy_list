@@ -1,0 +1,419 @@
+/* --------------------------------------------------
+ * Variables
+ * -------------------------------------------------- */
+:root {
+    --color-black: #000;
+    --color-dark-grey: #23252b;
+    --color-darkest-grey: #12141a;
+    --color-orange: #ffaa00;
+    --color-white: #fff;
+    --color-bright-grey: #dadada;
+    --color-grey: #bbb;
+    --color-red: #ff0000;
+	--color-green: #00bb00;
+	
+    --font-family: Lato, Helvetica Neue, helvetica, sans-serif;
+}
+
+/* --------------------------------------------------
+ * Basic Elements
+ * -------------------------------------------------- */
+body {
+    max-width: 100%;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 18px;
+    background: var(--color-black) url('../ressources/images/background.jpg') no-repeat center top 70px fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+a { text-decoration: none; color: var(--color-black); }
+a:hover { color: var(--color-orange); }
+
+main {
+    overflow: auto;
+    margin-top: 60px;
+    max-width: 100%;
+}
+
+p { margin: 15px; }
+
+table { border-collapse: collapse; }
+
+th, td {
+    border: none;
+    padding: 8px 20px 8px 0;
+    text-align: left;
+}
+
+/* --------------------------------------------------
+ * Navigation
+ * -------------------------------------------------- */
+nav {
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav a {
+    color: var(--color-bright-grey);
+    padding: 20px;
+}
+
+nav a:hover, nav a.active {
+    color: var(--color-white);
+    background-color: var(--color-darkest-grey);
+}
+
+nav a.nav-user-name {
+    color: var(--color-orange);
+    font-weight: bold;
+}
+
+nav a.nav-user-name:hover {
+    color: var(--color-white);
+    background-color: var(--color-dark-grey);
+}
+
+/* --------------------------------------------------
+ * Containers
+ * -------------------------------------------------- */
+.container {
+    max-width: 1300px;
+    margin: 20px auto;
+}
+
+.animes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px 30px;
+}
+
+.centered-container {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container, .register-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+}
+
+/* --------------------------------------------------
+ * Anime Components
+ * -------------------------------------------------- */
+.anime-box {
+    height: 100%;
+    position: relative;
+    font-weight: bold;
+}
+
+.anime-cover {
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s; /* shall not be instant */
+}
+
+.anime-cover:hover {
+    transform: translateY(-10px);
+}
+
+.anime-details-cover {
+    width: 450px;
+    height: 675px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 40px 0 0;
+    flex: 1;
+}
+
+.anime-details-infos {
+    flex: 2;
+}
+
+.anime-title {
+    padding-top: 18px;
+    max-width: 200px;
+}
+
+/* --------------------------------------------------
+ * Buttons
+ * -------------------------------------------------- */
+.emoji-button, .toggle-favorite-button, .play-button {
+    display: inline-block;
+    background: var(--color-dark-grey);
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.emoji-button, .toggle-favorite-button {
+    color: transparent;
+}
+
+.emoji-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px;
+    font-size: 12px;
+    text-shadow: 0 0 0 var(--color-grey);
+}
+
+.emoji-button:hover, .toggle-favorite-button:hover {
+    text-shadow: 0 0 0 var(--color-white);
+    background: var(--color-darkest-grey);
+    border-color: var(--color-white);
+}
+
+.toggle-favorite-button {
+    font-size: 13px;
+    margin-right: 8px;
+    padding: 4px;
+    text-shadow: 0 0 0 #fff;
+}
+
+.play-button {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    margin-right: 8px;
+    color: var(--color-white);
+    text-shadow: 0 0 0 var(--color-grey);
+}
+
+span#toggle-favorite-label { cursor: pointer; }
+span#toggle-favorite-label:hover { color: var(--color-orange); }
+
+/* --------------------------------------------------
+ * Ratings
+ * -------------------------------------------------- */
+.star {
+    text-shadow: 1px 1px 2px var(--color-black);
+    display: inline-block;
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.rating {
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* --------------------------------------------------
+ * Login / Register
+ * -------------------------------------------------- */
+.login-input, .register-input, .login-button, .register-button {
+	height: 40px;
+	font-size: 22px;
+}
+
+.login-input, .register-input {
+	width: 300px;
+}
+
+.login-button, .register-button {
+	width: 150px;
+}
+
+/* --------------------------------------------------
+ * Filter Form Styles
+ * -------------------------------------------------- */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    max-height: 1000px; /* Anpassen je nach Formularhöhe */
+    opacity: 1;
+}
+
+.form-container.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.input-row, .input-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Gleichmäßiger Abstand */
+}
+
+.input-row input[type="text"],
+.input-row input[type="number"],
+.input-row select {
+    flex: 1; /* Flexibles Wachstum für Eingabefelder und Dropdown */
+    border: 1px solid;
+    font-size: 18px;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-grey);
+    border-radius: 4px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.filter-button {
+	width: 200px;
+	height: 30px;
+	font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+}
+
+.filter-toggle-button {
+    cursor: pointer;
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    transition: margin-bottom 0.5s ease;
+    margin-bottom: 10px;
+}
+
+
+/* --------------------------------------------------
+ * Utility Classes
+ * -------------------------------------------------- */
+.float-right { float: right; }
+.float-left { float: left; }
+.flex { display: flex; }
+.inline { display: inline; }
+
+/* Margin and Padding Utility Classes */
+.margin-0 { margin: 0; }
+.margin-5 { margin: 5px; }
+.margin-h-5 { margin: 0 5px; }
+.margin-v-5 { margin: 5px 0; }
+.margin-10 { margin: 10px; }
+.margin-h-10 { margin: 0 10px; }
+.margin-v-10 { margin: 10px 0; }
+.margin-15 { margin: 15px; }
+.margin-h-15 { margin: 0 15px; }
+.margin-v-15 { margin: 15px 0; }
+.margin-20 { margin: 20px; }
+.margin-h-20 { margin: 0 20px; }
+.margin-v-20 { margin: 20px 0; }
+.margin-b-40 { margin-bottom: 40px; }
+.margin-auto { margin: auto; }
+
+.padding-0 { padding: 0; }
+.padding-5 { padding: 5px; }
+.padding-h-5 { padding: 0 5px; }
+.padding-v-5 { padding: 5px 0; }
+.padding-10 { padding: 10px; }
+.padding-h-10 { padding: 0 10px; }
+.padding-v-10 { padding: 10px 0; }
+.padding-15 { padding: 15px; }
+.padding-h-15 { padding: 0 15px; }
+.padding-v-15 { padding: 15px 0; }
+.padding-20 { padding: 20px; }
+.padding-h-20 { padding: 0 20px; }
+.padding-v-20 { padding: 20px 0; }
+
+.round-border { border-radius: 5px; }
+
+/* --------------------------------------------------
+ * Colors
+ * -------------------------------------------------- */
+.white-bg { background-color: var(--color-white); }
+.orange-bg { background-color: var(--color-orange); }
+.bright-grey-bg { background-color: var(--color-bright-grey); }
+.dark-bg { background-color: var(--color-dark-grey); }
+.darkest-bg { background-color: var(--color-darkest-grey); }
+
+/* Text Colors */
+.black-text { color: var(--color-black); }
+.white-text { color: var(--color-white); }
+.bright-grey-text { color: var(--color-bright-grey); }
+.grey-text { color: var(--color-grey); }
+.orange-text { color: var(--color-orange); }
+.red-text { color: var(--color-red); }
+.green-text { color: var(--color-green); }
+
+/* Text Styles */
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.text-center { text-align: center; }
+
+/* Sizing */
+.width-50 { width: 50%; }
+
+.chart {
+	height: 600px;
+	width: 100%;
+}
+
+.anime-details-chart {
+	height: 350px;
+	width: 100%;
+}
+
+/* --------------------------------------------------
+ * Scrollbar Styling
+ * -------------------------------------------------- */
+/* WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Breite des vertikalen Scrollbalkens */
+    height: 12px; /* Höhe des horizontalen Scrollbalkens */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark-grey); /* Farbe des Scrollbalken-Tracks */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-orange); /* Farbe des Scrollbalkens */
+    border-radius: 6px;
+    border: 3px solid var(--color-dark-grey); /* Rand um den Scrollbalken für visuelles Padding */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-white); /* Farbe des Scrollbalkens bei Hover */
+}
+
+/* Firefox */
+* {
+    scrollbar-width: auto; /* "Auto" oder "thin" */
+    scrollbar-color: var(--color-orange) var(--color-dark-grey); /* Farbe Scrollbalken und Track */
+}
