@@ -24,8 +24,8 @@ Parts of this project are licensed under different licenses:
 ## Credits
 
 ### Authors
-- [m4mbo](https://github.com/m4mbo) - Initial work
-- [deso85](https://github.com/deso85) - Refactored the project
+- [m4mbo](https://github.com/m4mbo) - Initial work.
+- [deso85](https://github.com/deso85) - Refactored the project.
 
 ### Project Structure
 The project structure has been adapted to follow the template provided by the GitHub project [php-project-template](https://github.com/deso85/php-project-template), licensed under [EUPL 1.2](https://eupl.eu/1.2/en/) by [deso85](https://github.com/deso85). This adjustment aims to improve the organization and maintainability of the codebase.
