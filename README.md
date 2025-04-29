@@ -24,7 +24,7 @@ Parts of this project are licensed under different licenses:
 ## Credits
 
 ### Authors
-- [m4mbo](https://github.com/m4mbo) - Initial work.
+- [mbaranr](https://github.com/mbaranr) - Initial work.
 - [deso85](https://github.com/deso85) - Refactored the project.
 
 ### Project Structure
